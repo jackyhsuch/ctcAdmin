@@ -1,0 +1,26 @@
+<table class = "table table-hover">
+    <caption>Users List</caption>
+   
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.contact_number %></td>
+        </tr>
+        <% end %>
+    </tbody>
+   
+</table>

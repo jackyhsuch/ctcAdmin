@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   get 'sessions/new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'admin_users/new'
 
+  get 'users', to: 'users#index'
   get 'users/new'
 
   get 'home', to: 'welcome#index'
