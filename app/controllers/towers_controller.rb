@@ -1,4 +1,5 @@
 class TowersController < ApplicationController
-  def index
-  end
+    def index
+        @towers = Tower.all()
+    end
 end

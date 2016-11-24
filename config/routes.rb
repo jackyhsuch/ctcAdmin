@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  get 'towers/index'
+
 
   get 'sessions/new'
   get    '/login',   to: 'sessions#new'
@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'users', to: 'users#index'
   get 'users/new'
+
+  get 'towers', to: 'towers#index'
 
   get 'home', to: 'welcome#index'
 
