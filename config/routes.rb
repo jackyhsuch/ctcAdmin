@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  get 'welcome/index'
+  get 'home', to: 'welcome#index'
 
   root 'sessions#new'
 

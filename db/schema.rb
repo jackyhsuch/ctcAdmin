@@ -11,15 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124042501) do
+ActiveRecord::Schema.define(version: 20161124081217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", default: "now()", null: false
+    t.datetime "updated_at", default: "now()", null: false
+    t.string   "password"
+  end
+
+  create_table "clocks", force: :cascade do |t|
+    t.date     "date"
+    t.string   "user",       limit: 255
+    t.string   "ip",         limit: 255
+    t.string   "action",     limit: 255
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status",     limit: 255
+    t.datetime "time"
   end
 
   create_table "progresses", force: :cascade do |t|
@@ -44,6 +57,16 @@ ActiveRecord::Schema.define(version: 20161124042501) do
     t.string   "answer"
     t.datetime "created_at", default: "now()", null: false
     t.datetime "updated_at", default: "now()", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "group",      limit: 255
+    t.string   "key",        limit: 255
+    t.string   "value",      limit: 255
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status",     limit: 255
   end
 
   create_table "topics", force: :cascade do |t|
