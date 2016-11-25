@@ -8,6 +8,7 @@
         <tr>
             <th>Topic</th>
             <th>Created at</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,13 @@
         <tr>
             <td><%= topic.name %></td>
             <td><%= topic.created_at %></td>
+            <td>
+                <a href="<%= topics_show_path(:topic_id => topic.id) %>" >
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                        add zone
+                    </button>
+                </a>
+            </td>
         </tr>
         <% end %>
         <% end %>

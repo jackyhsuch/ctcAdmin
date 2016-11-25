@@ -1,0 +1,39 @@
+<table class = "table table-hover">
+    <caption><%= @tower.name.upcase %> / <%= @topic.name.capitalize %></caption>
+   
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Difficulty</th>
+            <th>Created at</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @zones.each do |zone| %>
+        <tr>
+            <td><%= zone.name %></td>
+            <td><%= zone.difficulty %></td>
+            <td><%= zone.created_at %></td>
+        </tr>
+        <% end %>
+    </tbody>
+   
+</table>
+
+
+<%= form_for :zone do |f| %>
+<div class="row">
+    <div class="col-md-3">
+        <label>Zone Name</label>
+        <%= f.text_field :name, class: 'form-control', value: "Zone of " %>
+    </div>
+    <div class="col-md-3">
+        <label>Difficulty</label>
+        <%= f.number_field :difficulty, class: 'form-control'%>
+    </div>
+    <%= f.hidden_field :topic_id, :value => @topic.id %>
+</div>
+<br />
+<%= f.submit "Add", class: "btn btn-info" %>
+<% end %>
