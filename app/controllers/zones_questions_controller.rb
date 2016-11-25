@@ -1,0 +1,2 @@
+class ZonesQuestionsController < ApplicationController
+end
