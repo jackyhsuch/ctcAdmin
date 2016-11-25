@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   get 'towers/new'
   post 'towers/new', to: 'towers#create'
 
+  get 'topics', to: 'topics#index'
+  get 'topics/new'
+  post 'topics/new', to: 'topics#create'
+
   get 'home', to: 'welcome#index'
 
   root 'sessions#new'
