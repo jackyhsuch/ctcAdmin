@@ -9,7 +9,7 @@ class TowersController < ApplicationController
 
     def create
         @tower = Tower.new(tower_params)
-        @tower.name = tower_params['name'].strip.capitalize
+        @tower.name = tower_params['name'].strip.downcase
 
         if @tower.save!
             flash[:success] = "New tower added successfully!"
