@@ -23,6 +23,10 @@ class TopicsController < ApplicationController
         end
     end
 
+    def show
+        
+    end
+
     private
     def topic_params
         params.require(:topic).permit(:name, :tower_id)
