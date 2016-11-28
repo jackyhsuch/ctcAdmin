@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   resources :admin_users
   resources :zones
+  resources :topics
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

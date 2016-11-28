@@ -18,7 +18,7 @@
             <td><%= topic.name %></td>
             <td><%= topic.created_at %></td>
             <td>
-                <a href="<%= topics_show_path(:topic_id => topic.id) %>" >
+                <a href="<%= topic_path(topic.id) %>" >
                     <button type="button" class="btn btn-default" aria-label="Left Align">
                         add zone
                     </button>
