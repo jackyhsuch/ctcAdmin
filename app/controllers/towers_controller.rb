@@ -19,6 +19,23 @@ class TowersController < ApplicationController
         end
     end
 
+    def show
+        @tower = Tower.find(params['id'])
+    end
+
+    def update
+        tower = Tower.find(params['id'])
+        tower.name = tower_params['name']
+
+        if tower.save!
+            flash[:success] = "Edited successfully!"
+            redirect_to towers_path
+        else
+            flash[:error] = "Error!"
+            redirect_to towers_path
+        end
+    end
+
     def delete
         tower = Tower.find(params['tower_id'])
         tower.destroy

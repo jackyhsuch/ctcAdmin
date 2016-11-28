@@ -20,6 +20,11 @@
                         view
                     </button>
                 </a>
+                <a href="<%= tower_path(tower.id) %>" >
+                    <button type="button" class="btn btn-info" aria-label="Left Align">
+                        edit
+                    </button>
+                </a>
                 <a href="<%= towers_delete_path(tower_id: tower.id) %>" >
                     <button type="button" class="btn btn-danger" aria-label="Left Align">
                         delete
