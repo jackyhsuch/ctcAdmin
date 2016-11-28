@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'towers', to: 'towers#index'
   get 'towers/new'
   post 'towers/new', to: 'towers#create'
+  get 'towers/delete'
 
   get 'topics', to: 'topics#index'
   get 'topics/new'

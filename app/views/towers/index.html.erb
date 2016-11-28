@@ -16,11 +16,17 @@
             <td><%= tower.created_at %></td>
             <td>
                 <a href="<%= topics_path() %>#<%= tower.name.split.join('_').downcase %>" >
-                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                    <button type="button" class="btn btn-success" aria-label="Left Align">
                         view
                     </button>
                 </a>
+                <a href="<%= towers_delete_path(tower_id: tower.id) %>" >
+                    <button type="button" class="btn btn-danger" aria-label="Left Align">
+                        delete
+                    </button>
+                </a>
             </td>
+
         </tr>
         <% end %>
     </tbody>

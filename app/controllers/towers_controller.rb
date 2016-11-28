@@ -19,6 +19,13 @@ class TowersController < ApplicationController
         end
     end
 
+    def delete
+        tower = Tower.find(params['tower_id'])
+        tower.destroy
+
+        redirect_to towers_path
+    end
+
     private
     def tower_params
         params.require(:tower).permit(:name)
