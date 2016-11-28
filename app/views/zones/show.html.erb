@@ -1,8 +1,8 @@
 <% title "Questions" %>
 
 <ol class="breadcrumb">
-  <li><a href="#"><%= @tower.name.upcase %></a></li>
-  <li><a href="#"><%= @topic.name.capitalize %></a></li>
+  <li><a href="<%= towers_path %>"><%= @tower.name.upcase %></a></li>
+  <li><a href="<%= topic_path(@topic.id) %>"><%= @topic.name.capitalize %></a></li>
   <li class="active"><%= @zone.name %></li>
 </ol>
 

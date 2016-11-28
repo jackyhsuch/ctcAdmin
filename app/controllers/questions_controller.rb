@@ -1,6 +1,8 @@
 class QuestionsController < ApplicationController
     def new
         @zone = Zone.find(params[:zone_id])
+        @topic = Topic.find(@zone.topic_id)
+        @tower = Tower.find(@topic.tower_id)
     end
 
     def create

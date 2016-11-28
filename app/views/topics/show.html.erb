@@ -1,5 +1,8 @@
 <table class = "table table-hover">
-    <caption><%= @tower.name.upcase %> / <%= @topic.name.capitalize %></caption>
+    <ol class="breadcrumb">
+        <li><a href="<%= towers_path %>"><%= @tower.name.upcase %></a></li>
+        <li class="active"><%= @topic.name.capitalize %></li>
+    </ol>
    
     <thead>
         <tr>

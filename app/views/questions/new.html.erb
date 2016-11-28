@@ -1,5 +1,10 @@
 <% title "New Question" %>
-<h1 class="text-center"><%= @zone.name %></h1>
+<ol class="breadcrumb">
+  <li><a href="<%= towers_path %>"><%= @tower.name.upcase %></a></li>
+  <li><a href="<%= topic_path(@topic.id) %>"><%= @topic.name.capitalize %></a></li>
+  <li class="active"><%= @zone.name %></li>
+</ol>
+
 <h3 class="text-center">New question</h3>
 
 <div class="row">
