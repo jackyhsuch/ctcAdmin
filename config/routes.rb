@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get 'topics/show'
   post 'topics/show', to: 'zones#create'
 
+  get 'questions/new'
+  post 'questions/new', to: 'questions#create'
+
 
   get 'zones/show'
 

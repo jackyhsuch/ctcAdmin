@@ -1,0 +1,37 @@
+<% title "New Question" %>
+<h1 class="text-center"><%= @zone.name %></h1>
+<h3 class="text-center">New question</h3>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for :question do |f| %>
+            <%= f.label :question %>
+            <%= f.text_area :question, class: 'form-control'%>
+            <br />
+
+            <label>Choice A</label>
+            <%= f.text_field :choice_A, class: 'form-control'%>
+            <br />
+
+            <label>Choice B</label>
+            <%= f.text_field :choice_B, class: 'form-control'%>
+            <br />
+
+            <label>Choice C</label>
+            <%= f.text_field :choice_C, class: 'form-control'%>
+            <br />
+
+            <label>Choice D</label>
+            <%= f.text_field :choice_D, class: 'form-control'%>
+            <br />
+
+            <label>Answer</label>
+            <%= f.text_field :answer, :maxlength => 1, class: 'form-control'%>
+            <br />
+
+            <%= f.hidden_field :zone_id, :value => @zone.id %>
+
+            <%= f.submit "Add", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>

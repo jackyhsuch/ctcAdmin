@@ -1,7 +1,21 @@
 <% title "Questions" %>
 
-<caption><%= @tower.name.upcase %> / <%= @topic.name.capitalize %> / <%= @zone.name %></caption>
+<ol class="breadcrumb">
+  <li><a href="#"><%= @tower.name.upcase %></a></li>
+  <li><a href="#"><%= @topic.name.capitalize %></a></li>
+  <li class="active"><%= @zone.name %></li>
+</ol>
+
+<div class="row">
+<div class="col-md-2">
 <h1>Questions</h1>
+</div>
+<div class="col-md-3">
+<a href="<%= questions_new_path(:zone_id => @zone.id) %>" >
+    <h1 type="button" class="btn btn-info" aria-label="Left Align">add</h1>
+</a>
+</div>
+</div>
 
 <% @questions.each do |question| %>
 <div class = "panel panel-default">
