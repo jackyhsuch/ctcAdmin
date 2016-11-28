@@ -1,4 +1,13 @@
 class ZonesController < ApplicationController
+    def show
+        @zone = Zone.find(params['id'])
+        @topic = Topic.find(@zone.topic_id)
+        @tower = Tower.find(@topic.tower_id)
+
+        @questions = Question.where(zone_id: params['id'])
+        @count = 1
+    end
+
     def new
     end
 

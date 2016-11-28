@@ -20,11 +20,14 @@ Rails.application.routes.draw do
   post 'topics/show', to: 'zones#create'
 
 
+  get 'zones/show'
+
   get 'home', to: 'welcome#index'
 
   root 'sessions#new'
 
   resources :admin_users
+  resources :zones
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
