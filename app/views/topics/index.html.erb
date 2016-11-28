@@ -1,5 +1,6 @@
 <% @towers.each do |tower| %>
 <table class = "table table-hover">
+    <a id="<%= tower.name.split.join('_').downcase %>"></a>
     <span style="color:grey"><%= tower.name.upcase %></span>    
     <a href="<%= topics_new_path(:tower_id => tower.id) %>" >
         <button type = "button" class = "btn btn-info">add</button>

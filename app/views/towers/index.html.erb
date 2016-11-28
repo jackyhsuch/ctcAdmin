@@ -5,14 +5,22 @@
         <tr>
             <th>Name</th>
             <th>Created at</th>
+            <th></th>
         </tr>
     </thead>
 
     <tbody>
         <% @towers.each do |tower| %>
         <tr>
-            <td><%= tower.name %></td>
+            <td><%= tower.name.upcase %></td>
             <td><%= tower.created_at %></td>
+            <td>
+                <a href="<%= topics_path() %>#<%= tower.name.split.join('_').downcase %>" >
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                        view
+                    </button>
+                </a>
+            </td>
         </tr>
         <% end %>
     </tbody>
