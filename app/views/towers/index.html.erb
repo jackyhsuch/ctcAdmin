@@ -20,16 +20,12 @@
                         view
                     </button>
                 </a>
-                <a href="<%= tower_path(tower.id) %>" >
+                <a href="<%= edit_tower_path(tower.id) %>" >
                     <button type="button" class="btn btn-info" aria-label="Left Align">
                         edit
                     </button>
                 </a>
-                <a href="<%= towers_delete_path(tower_id: tower.id) %>" >
-                    <button type="button" class="btn btn-danger" aria-label="Left Align">
-                        delete
-                    </button>
-                </a>
+                <%= link_to raw('<button type="button" class="btn btn-danger" aria-label="Left Align">delete</button>'), tower, method: :delete, data: { confirm: "You sure?" } %>
             </td>
 
         </tr>
@@ -38,6 +34,6 @@
    
 </table>
 
-<a href="<%= towers_new_path %>" >
+<a href="<%= new_tower_path %>" >
     <button type = "button" class = "btn btn-info">Add Tower</button>
 </a>

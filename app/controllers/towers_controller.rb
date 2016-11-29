@@ -4,15 +4,15 @@ class TowersController < ApplicationController
     end
 
     def new
+        @tower = Tower.new
     end
-
 
     def create
         @tower = Tower.new(tower_params)
         @tower.name = tower_params['name'].strip.downcase
 
         if @tower.save!
-            flash[:success] = "New tower added successfully!"
+            flash[:success] = "Tower added!"
             redirect_to towers_path
         else
             render 'new'
@@ -28,7 +28,7 @@ class TowersController < ApplicationController
         tower.name = tower_params['name']
 
         if tower.save!
-            flash[:success] = "Edited successfully!"
+            flash[:success] = "Tower edited!"
             redirect_to towers_path
         else
             flash[:error] = "Error!"
@@ -36,10 +36,13 @@ class TowersController < ApplicationController
         end
     end
 
-    def delete
-        tower = Tower.find(params['tower_id'])
-        tower.destroy
+    def edit
+        @tower = Tower.find(params[:id])
+    end
 
+    def destroy
+        Tower.find(params[:id]).destroy
+        flash[:success] = "Tower deleted!"
         redirect_to towers_path
     end
 
