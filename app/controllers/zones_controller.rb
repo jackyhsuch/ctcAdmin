@@ -21,14 +21,12 @@ class ZonesController < ApplicationController
         @zone.difficulty = zone_params['difficulty']
 
 
-
-
         if @zone.save!
             flash[:success] = "New tower added successfully!"
-            redirect_to topics_show_path(:topic_id => @topic.id)
+            redirect_to topic_path(@topic.id)
         else
             flash[:error] = "Error!"
-            redirect_to topics_show_path(:topic_id => @topic.id)
+            redirect_to topic_path(@topic.id)
         end
     end
 

@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get 'topics', to: 'topics#index'
   get 'topics/new'
   post 'topics/new', to: 'topics#create'
-  get 'topics/show'
   post 'topics/show', to: 'zones#create'
 
   get 'questions/new'

@@ -27,6 +27,7 @@ class TopicsController < ApplicationController
         @topic = Topic.find(params[:id])
         @tower = Tower.find(@topic.tower_id)
         @zones = Zone.where(topic_id: @topic.id)
+        @zone = Zone.new
     end
 
     def edit
