@@ -26,7 +26,7 @@ class TopicsController < ApplicationController
     def show
         @topic = Topic.find(params[:id])
         @tower = Tower.find(@topic.tower_id)
-        @zones = Zone.where(topic_id: @topic.id)
+        @zones = Zone.where(topic_id: @topic.id).order(difficulty: :asc)
         @zone = Zone.new
     end
 
@@ -38,7 +38,7 @@ class TopicsController < ApplicationController
         @topic = Topic.find(params[:id])
 
         if @topic.update_attributes(topic_params)
-            flash[:success] = "Edited!"
+            flash[:success] = "Edited Topic!"
             redirect_to topics_path
         else
             flash[:error] = "Error!"

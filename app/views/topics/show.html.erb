@@ -3,7 +3,9 @@
         <li><a href="<%= towers_path %>"><%= @tower.name.upcase %></a></li>
         <li class="active"><%= @topic.name.capitalize %></li>
     </ol>
-   <h3>Zone List</h3>
+    <h1>Topic: <%= @topic.name.capitalize %></h1>
+    <br />
+    <h4>Zone List</h4>
     <thead>
         <tr>
             <th>Name</th>
@@ -21,8 +23,13 @@
             <td><%= zone.created_at %></td>
             <td>
                 <a href="<%= zone_path(zone.id) %>" >
-                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                    <button type="button" class="btn btn-success" aria-label="Left Align">
                         view
+                    </button>
+                </a>
+                <a href="<%= edit_zone_path(zone.id, topic_id: @topic.id) %>" >
+                    <button type="button" class="btn btn-info" aria-label="Left Align">
+                        edit
                     </button>
                 </a>
             </td>
