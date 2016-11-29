@@ -29,11 +29,7 @@
                         edit
                     </button>
                 </a>
-                <a href="<%=  %>" >
-                    <button type="button" class="btn btn-danger" aria-label="Left Align">
-                        delete
-                    </button>
-                </a>
+                <%= link_to raw('<button type="button" class="btn btn-danger" aria-label="Left Align">delete</button>'), topic, method: :delete, data: { confirm: "You sure?" } %>
             </td>
         </tr>
         <% end %>
