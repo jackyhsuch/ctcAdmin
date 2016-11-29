@@ -29,6 +29,22 @@ class TopicsController < ApplicationController
         @zones = Zone.where(topic_id: @topic.id)
     end
 
+    def edit
+        @topic = Topic.find(params[:id])
+    end
+
+    def update
+        @topic = Topic.find(params[:id])
+
+        if @topic.update_attributes(topic_params)
+            flash[:success] = "Edited!"
+            redirect_to topics_path
+        else
+            flash[:error] = "Error!"
+            render 'edit'
+        end
+    end
+
     private
     def topic_params
         params.require(:topic).permit(:name, :tower_id)

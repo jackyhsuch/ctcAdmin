@@ -1,0 +1,17 @@
+<% title "Topic" %>
+<h1 class="text-center">Edit Topic</h1>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for @topic do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control'%>
+            <br />
+            <%= f.collection_select(:tower_id, Tower.all, :id, :name) %>
+            <br />
+            <br />
+            <%= f.hidden_field :id, :value => @topic.id %>
+            <%= f.submit "Edit", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
