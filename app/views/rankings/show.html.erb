@@ -1,2 +1,16 @@
 <h1><%= @tower.name.upcase %> Ranking</h1>
 <p>Find me in app/views/rankings/show.html.erb</p>
+
+<% @topics.each do |topic| %>
+<div class="col-md-4">
+    <div class = "panel panel-default">
+       <div class = "panel-heading">
+          <%= topic.name.upcase %>
+       </div>
+       
+       <div class = "panel-body">
+          Panel content
+       </div>
+    </div>
+</div>
+<% end %>
