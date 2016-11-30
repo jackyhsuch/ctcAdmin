@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
     def index
-        @towers = Tower.all()
-        @topics = Topic.all()
+        @towers = Tower.all().order(id: :asc)
+        @topics = Topic.all().order(id: :asc)
     end
 
     def new
