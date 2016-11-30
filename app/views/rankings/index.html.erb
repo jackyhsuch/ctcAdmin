@@ -1,0 +1,12 @@
+<h1>Rankings</h1>
+<p>Find me in app/views/rankings/index.html.erb</p>
+
+<% @towers.each do |tower| %>
+<div class="col-md-3">
+    <a href="<%= ranking_path(tower.id) %>">
+        <button type = "button" class = "btn btn-primary btn-lg btn-block">
+            <%= tower.name.upcase %>
+        </button>
+    </a>
+</div>
+<% end %>
