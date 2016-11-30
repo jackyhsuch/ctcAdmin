@@ -46,6 +46,13 @@ class QuestionsController < ApplicationController
         end
     end
 
+    def destroy
+        zone_id = Question.find(params[:id]).zone_id
+        Question.find(params[:id]).destroy
+        flash[:success] = "Question deleted"
+        redirect_to zone_path(zone_id)
+    end
+
     private
     def question_params
         params.require(:question).permit(:question, :choice_A, :choice_B, :choice_C, :choice_D, :answer, :zone_id)

@@ -32,6 +32,8 @@
                 <li><%= question.choice_D %></li>
             </ol>
             Ans: <%= question.answer %>
+            
+            <%= link_to raw('<button type="button" class="btn btn-danger pull-right" aria-label="Left Align">delete</button>'), question, method: :delete, data: { confirm: "You sure?" } %>
             <a class="pull-right" href="<%= edit_question_path(question.id) %>" >
                 <button type="button" class="btn btn-info" aria-label="Left Align">
                     edit
