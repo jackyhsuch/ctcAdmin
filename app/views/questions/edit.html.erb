@@ -1,0 +1,34 @@
+<% title "Question" %>
+<h1 class="text-center">Edit Question</h1>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for @question do |f| %>
+            <%= f.label :question %>
+            <%= f.text_area :question, class: 'form-control'%>
+            <br />
+            <%= f.label :choice_A %>
+            <%= f.text_field :choice_A, class: 'form-control'%>
+            <br />
+            <%= f.label :choice_B %>
+            <%= f.text_field :choice_B, class: 'form-control'%>
+            <br />
+            <%= f.label :choice_C %>
+            <%= f.text_field :choice_C, class: 'form-control'%>
+            <br />
+            <%= f.label :choice_D %>
+            <%= f.text_field :choice_D, class: 'form-control'%>
+            <br />
+            <%= f.label :answer %>
+            <%= f.text_field :answer, :maxlength => 1, class: 'form-control'%>
+            <br />
+            <%= f.label :Zone %>
+            <br />
+            <%= f.collection_select(:zone_id, Zone.all, :id, :name) %>
+            <br />
+            <br />
+            <%= f.hidden_field :id, :value => @question.id %>
+            <%= f.submit "Edit", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>

@@ -10,6 +10,7 @@
         <tr>
             <th>Name</th>
             <th>Difficulty</th>
+            <th>No. of Questions</th>
             <th>Created at</th>
             <th></th>
         </tr>
@@ -20,6 +21,7 @@
         <tr>
             <td><%= zone.name %></td>
             <td><%= zone.difficulty %></td>
+            <td><%= Question.where(zone_id: zone.id).count %></td>
             <td><%= zone.created_at %></td>
             <td>
                 <a href="<%= zone_path(zone.id) %>" >

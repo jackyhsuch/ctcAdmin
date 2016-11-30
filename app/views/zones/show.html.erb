@@ -32,7 +32,14 @@
                 <li><%= question.choice_D %></li>
             </ol>
             Ans: <%= question.answer %>
+            <a class="pull-right" href="<%= edit_question_path(question.id) %>" >
+                <button type="button" class="btn btn-info" aria-label="Left Align">
+                    edit
+                </button>
+            </a>
         </div>
+
+        
     </div>
 </div>
 <% @count += 1 %>

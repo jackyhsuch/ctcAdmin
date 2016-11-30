@@ -4,7 +4,7 @@ class ZonesController < ApplicationController
         @topic = Topic.find(@zone.topic_id)
         @tower = Tower.find(@topic.tower_id)
 
-        @questions = Question.where(zone_id: params['id'])
+        @questions = Question.where(zone_id: params['id']).order(id: :asc)
         @count = 1
     end
 
