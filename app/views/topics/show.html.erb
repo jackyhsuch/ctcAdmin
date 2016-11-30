@@ -32,6 +32,7 @@
                         edit
                     </button>
                 </a>
+                <%= link_to raw('<button type="button" class="btn btn-danger" aria-label="Left Align">delete</button>'), zone, method: :delete, data: { confirm: "You sure?" } %>
             </td>
         </tr>
         <% end %>

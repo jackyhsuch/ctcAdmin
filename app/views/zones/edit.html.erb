@@ -10,6 +10,8 @@
             <%= f.label :difficulty %>
             <%= f.number_field :difficulty, class: 'form-control'%>
             <br />
+            <%= f.label :topic %>
+            <br />
             <%= f.collection_select(:topic_id, Topic.all, :id, :name) %>
             <br />
             <br />

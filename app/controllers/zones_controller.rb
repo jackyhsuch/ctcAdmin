@@ -47,6 +47,13 @@ class ZonesController < ApplicationController
         end
     end
 
+    def destroy
+        topic_id = Zone.find(params[:id]).topic_id
+        Zone.find(params[:id]).destroy
+        flash[:success] = "Zone deleted"
+        redirect_to topic_path(topic_id)
+    end
+
     private
     def zone_params
         params.require(:zone).permit(:name, :difficulty, :topic_id)

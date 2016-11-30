@@ -1,7 +1,7 @@
 <% @towers.each do |tower| %>
 <table class = "table table-hover">
     <a id="<%= tower.name.split.join('_').downcase %>"></a>
-    <span style="color:grey"><%= tower.name.upcase %></span>    
+    <h3 style="color:grey">Tower: <%= tower.name.upcase %></h3>    
          
     <thead>
         <tr>
