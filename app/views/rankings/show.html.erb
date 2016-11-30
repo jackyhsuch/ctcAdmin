@@ -8,9 +8,14 @@
           <%= topic.name.upcase %>
        </div>
        
-       <div class = "panel-body">
-          Panel content
-       </div>
+        <div class = "panel-body">
+            <% @usersProgress = Progress.where(topics_id: topic.id).order(level: :desc).limit(10) %>
+            <ol> 
+                <% @usersProgress.each do |userProgress| %>
+                <li><%= User.find(userProgress.users_id).name %></li>
+                <% end %>
+            </ol>
+        </div>
     </div>
 </div>
 <% end %>
