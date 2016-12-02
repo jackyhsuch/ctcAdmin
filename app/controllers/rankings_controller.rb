@@ -5,6 +5,6 @@ class RankingsController < ApplicationController
 
     def show
         @tower = Tower.find(params[:id])
-        @topics = Topic.where(tower_id: @tower.id)
+        @topics = Topic.where(towers_id: @tower.id)
     end
 end

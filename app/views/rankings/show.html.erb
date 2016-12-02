@@ -12,7 +12,8 @@
             <% @usersProgress = Progress.where(topics_id: topic.id).order(level: :desc).limit(10) %>
             <ol> 
                 <% @usersProgress.each do |userProgress| %>
-                <li><%= User.find(userProgress.users_id).name %></li>
+                <% user = User.find(userProgress.users_id) %>
+                <li><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></li>
                 <% end %>
             </ol>
         </div>
