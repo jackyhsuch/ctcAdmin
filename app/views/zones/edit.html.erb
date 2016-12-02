@@ -12,10 +12,10 @@
             <br />
             <%= f.label :topic %>
             <br />
-            <%= f.collection_select(:topic_id, Topic.all, :id, :name) %>
+            <%= f.collection_select(:topics_id, Topic.all, :id, :name) %>
             <br />
             <br />
-            <%= f.hidden_field :topic_id, :value => @topic.id %>
+            <%= f.hidden_field :topics_id, :value => @topic.id %>
             <%= f.submit "Edit", class: "btn btn-primary" %>
         <% end %>
     </div>

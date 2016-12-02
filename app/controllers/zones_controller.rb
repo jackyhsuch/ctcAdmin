@@ -40,7 +40,7 @@ class ZonesController < ApplicationController
 
         if @zone.update_attributes(zone_params)
             flash[:success] = "Edited Zone!"
-            redirect_to topic_path(zone_params[:topic_id])
+            redirect_to topic_path(zone_params[:topics_id])
         else
             flash[:error] = "Error!"
             render 'edit'
@@ -56,6 +56,6 @@ class ZonesController < ApplicationController
 
     private
     def zone_params
-        params.require(:zone).permit(:name, :difficulty, :topic_id)
+        params.require(:zone).permit(:name, :difficulty, :topics_id)
     end
 end
