@@ -39,7 +39,7 @@ class QuestionsController < ApplicationController
 
         if @question.update_attributes(question_params)
             flash[:success] = "Edited Question!"
-            redirect_to zone_path(@question.zone_id)
+            redirect_to zone_path(@question.zones_id)
         else
             flash[:error] = "Error!"
             render 'edit'

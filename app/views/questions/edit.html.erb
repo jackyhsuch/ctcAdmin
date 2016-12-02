@@ -24,7 +24,7 @@
             <br />
             <%= f.label :Zone %>
             <br />
-            <%= f.collection_select(:zone_id, Zone.all, :id, :name) %>
+            <%= f.collection_select(:zones_id, Zone.all, :id, :name) %>
             <br />
             <br />
             <%= f.hidden_field :id, :value => @question.id %>
