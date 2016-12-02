@@ -25,8 +25,8 @@ class TopicsController < ApplicationController
 
     def show
         @topic = Topic.find(params[:id])
-        @tower = Tower.find(@topic.tower_id)
-        @zones = Zone.where(topic_id: @topic.id).order(difficulty: :asc)
+        @tower = Tower.find(@topic.towers_id)
+        @zones = Zone.where(topics_id: @topic.id).order(difficulty: :asc)
         @zone = Zone.new
     end
 

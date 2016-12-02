@@ -17,7 +17,7 @@
     </thead>
     <tbody>
         <% @topics.each do |topic| %>
-        <% if topic.tower_id == tower.id %>
+        <% if topic.towers_id == tower.id %>
         <tr>
             <td><%= topic.name %></td>
             <td><%= topic.created_at %></td>

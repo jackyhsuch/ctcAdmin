@@ -21,7 +21,7 @@
         <tr>
             <td><%= zone.name %></td>
             <td><%= zone.difficulty %></td>
-            <td><%= Question.where(zone_id: zone.id).count %></td>
+            <td><%= Question.where(zones_id: zone.id).count %></td>
             <td><%= zone.created_at %></td>
             <td>
                 <a href="<%= zone_path(zone.id) %>" >
@@ -47,7 +47,7 @@
 <div class="row">
     <div class="col-md-3">
         <label>Zone Name</label>
-        <%= f.text_field :name, class: 'form-control', value: "Zone of " %>
+        <%= f.text_field :name, class: 'form-control' %>
     </div>
     <div class="col-md-3">
         <label>Difficulty</label>

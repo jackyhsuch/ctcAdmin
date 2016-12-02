@@ -13,10 +13,10 @@ class QuestionsController < ApplicationController
 
         @question = Question.new(question_params)
         @question.question = question_params['question']
-        @question.choice_A = question_params['choice_A']
-        @question.choice_B = question_params['choice_B']
-        @question.choice_C = question_params['choice_C']
-        @question.choice_D = question_params['choice_D']
+        @question.a = question_params['a']
+        @question.b = question_params['b']
+        @question.c = question_params['c']
+        @question.d = question_params['d']
         @question.answer = question_params['answer'].downcase
         @question.zone_id = question_params['zone_id']
 
@@ -55,6 +55,6 @@ class QuestionsController < ApplicationController
 
     private
     def question_params
-        params.require(:question).permit(:question, :choice_A, :choice_B, :choice_C, :choice_D, :answer, :zone_id)
+        params.require(:question).permit(:question, :a, :b, :c, :d, :answer, :zone_id)
     end
 end

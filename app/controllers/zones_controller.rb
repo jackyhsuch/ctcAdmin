@@ -1,10 +1,10 @@
 class ZonesController < ApplicationController
     def show
         @zone = Zone.find(params['id'])
-        @topic = Topic.find(@zone.topic_id)
-        @tower = Tower.find(@topic.tower_id)
+        @topic = Topic.find(@zone.topics_id)
+        @tower = Tower.find(@topic.towers_id)
 
-        @questions = Question.where(zone_id: params['id']).order(id: :asc)
+        @questions = Question.where(zones_id: params['id']).order(id: :asc)
         @count = 1
     end
 
@@ -13,11 +13,11 @@ class ZonesController < ApplicationController
 
     def create
         @topic = Topic.find(zone_params['topic_id'])
-        @tower = Tower.find(@topic.tower_id)
+        @tower = Tower.find(@topic.towers_id)
 
         @zone = Zone.new
         @zone.name = zone_params['name'].strip
-        @zone.topic_id = zone_params['topic_id']
+        @zone.topics_id = zone_params['topic_id']
         @zone.difficulty = zone_params['difficulty']
 
 
