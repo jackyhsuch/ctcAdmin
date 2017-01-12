@@ -32,6 +32,8 @@ class QuestionsController < ApplicationController
 
     def edit
         @question = Question.find(params[:id])
+
+        @topicId = Zone.find(@question.zones_id).topics_id
     end
 
     def update
